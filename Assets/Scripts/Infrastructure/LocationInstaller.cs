@@ -4,6 +4,11 @@ using Zenject;
 
 public class LocationInstaller : MonoInstaller
 {
+    [SerializeField]
+    private SunSystemGeneration _sunGenerator;
+    [SerializeField]
+    private EnemyGeneration _enemyGenerator;
+
     public Transform StartPoint;
     public MouseFlightController flightController;
     public Player playerPlane;
@@ -12,6 +17,9 @@ public class LocationInstaller : MonoInstaller
     {
         CreatePlane();
         CreateControls();
+
+        BindSunSystemGenerator();
+        BindEnemyGeneration();
     }
 
     private void CreateControls()
@@ -32,5 +40,21 @@ public class LocationInstaller : MonoInstaller
             Bind<Player>().
             FromInstance(plane).
             AsSingle();
+    }
+
+    private void BindSunSystemGenerator()
+    {
+        Container
+            .Bind<SunSystemGeneration>()
+            .FromInstance(_sunGenerator)
+            .AsSingle();
+    }
+
+    private void BindEnemyGeneration()
+    {
+        Container
+            .Bind<EnemyGeneration>()
+            .FromInstance(_enemyGenerator)
+            .AsSingle();
     }
 }

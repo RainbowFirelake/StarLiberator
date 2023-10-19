@@ -41,22 +41,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7873915062169975502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a591d1c8ab1cb14c87df7f15e8d9058, type: 3}
+  m_Script: {fileID: 11500000, guid: f0d6028b5508c5a4e90a5596a9c7c432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sunPosition: {fileID: 0}
-  _sunPrefabs:
-  - {fileID: 4977357999119198603, guid: a8965e8b90ba271458f6c008387b4d41, type: 3}
-  - {fileID: 3446312339052408562, guid: aa3bdc32d09b7ce41a6a95d8631572cc, type: 3}
-  - {fileID: 4977357999119198603, guid: 992d7f41cc772ab4fbf40586426b9771, type: 3}
-  - {fileID: 4977357999119198603, guid: 1e8fef4dff5a504488f5b0884cd0cf9f, type: 3}
-  _emptyObject: {fileID: 3334118008381944689, guid: eef29a69e7cab4745a517137a88187ba,
-    type: 3}
-  _colourSettings:
-  - {fileID: 11400000, guid: c6a8982388fbd824ab75d21590034f1e, type: 2}
-  - {fileID: 11400000, guid: 296785c252cb0164aa40a362208ce4e8, type: 2}
-  - {fileID: 11400000, guid: 4d2914748ff1c4089acd77328cfcb02e, type: 2}
+  _sunPrefabs: []
+  _emptyObject: {fileID: 0}
+  _colourSettings: []
   _shapeSettings:
-  - {fileID: 11400000, guid: bb563e90654574d4cb7d931456630f79, type: 2}
-  _currentPlanets: []
-  _numberOfPlanetsToGenerate: 4
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 1fadef1d31670a54b91611a10cd03743, type: 2}
+  - {fileID: 11400000, guid: 5bf6e62bdd5669b42b11015d7c80046e, type: 2}
+  - {fileID: 11400000, guid: 0a0498607da85d44c81255df602bd941, type: 2}
+  _player: {fileID: 0}
+  _playerSpawnPositions:
+  - {fileID: 0}
+  _enemiesPrefabs:
+  - {fileID: 7881618439268928693, guid: 9e06eb5f3c5b5d04a82eabf0216b3bca, type: 3}
+  - {fileID: 6014854663717710157, guid: 609c875d01b2d6e4ea017a2ca646fdca, type: 3}
+  - {fileID: 2189548404072318276, guid: 9cc546480df2b4447b744fa37d3905aa, type: 3}
+  _enemyBase: {fileID: 3493285437016502852, guid: 170bcca150b41a04e81d06f9f6a4350a,
+    type: 3}
+  _maxNumberOfPlanetsToGenerate: 4
+  _currentLevel: 0
