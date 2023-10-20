@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
       propertyPath: thrust
-      value: 140
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
@@ -399,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
       propertyPath: shiftThrustMultiplier
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8483527284508948851, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
@@ -531,6 +531,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4622285390861495308, guid: 8b9e8529f42020f4dacf64553cb2203d,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 4622285390861495308, guid: 8b9e8529f42020f4dacf64553cb2203d,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

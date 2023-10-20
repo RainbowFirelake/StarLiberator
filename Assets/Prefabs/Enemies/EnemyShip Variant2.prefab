@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 8383620679686633199, guid: f6976f898b43de74e8f4777ca5eb3a2f,
         type: 3}
       propertyPath: _flySpeed
-      value: 70
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8383620679686633199, guid: f6976f898b43de74e8f4777ca5eb3a2f,
         type: 3}
@@ -205,6 +205,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8864978535070491026, guid: f18b0c4cd901e7b44a1ad0fc0c36e4e2,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8864978535070491026, guid: f18b0c4cd901e7b44a1ad0fc0c36e4e2,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2018972801220821784, guid: f18b0c4cd901e7b44a1ad0fc0c36e4e2, type: 3}

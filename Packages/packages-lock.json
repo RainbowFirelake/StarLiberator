@@ -16,6 +16,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.crepuscular": {
+      "version": "https://github.com/ARtronClassicStudio/Crepuscular-URP.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2ce064c2301044dffe3e1b418b6946f786f35fe6"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,

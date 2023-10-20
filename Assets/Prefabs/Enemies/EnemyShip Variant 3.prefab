@@ -63,6 +63,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Example4NoInterior_Grey
       objectReference: {fileID: 0}
+    - target: {fileID: 5517382575184900923, guid: 8d4e19a2324d72249a81ab7bcfad91a5,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5517382575184900923, guid: 8d4e19a2324d72249a81ab7bcfad91a5,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2216422153846844210, guid: 8d4e19a2324d72249a81ab7bcfad91a5, type: 3}

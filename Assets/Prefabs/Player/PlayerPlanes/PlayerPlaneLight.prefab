@@ -8,6 +8,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7119086199051825826}
     m_Modifications:
+    - target: {fileID: 3133238006738781126, guid: 90d5c4eeecf7d3c41977a39408c2fe00,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3133238006738781126, guid: 90d5c4eeecf7d3c41977a39408c2fe00,
+        type: 3}
     - target: {fileID: 6391839290496714497, guid: 90d5c4eeecf7d3c41977a39408c2fe00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -149,6 +155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
+      propertyPath: thrust
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
+        type: 3}
       propertyPath: turnTorque.x
       value: 90
       objectReference: {fileID: 0}
@@ -180,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 7452103347714807829, guid: 02a8139c808b2ac41aed14d4db0728fc,
         type: 3}
       propertyPath: shiftThrustMultiplier
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

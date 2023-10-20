@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   _rateOfFire: 150
   _damage: 125
-  _bulletSpeed: 2500
+  _bulletSpeed: 2250
   _isAmmoInfinite: 1
   _ammoCount: 60
   _isDamageImpactsOnArea: 0
