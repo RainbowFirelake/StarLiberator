@@ -10,21 +10,30 @@ public class LoseScreen : MonoBehaviour
     private GameObject _panel = null;
 
     private Health _playerHealth = null;
+    private PlayerInitializationOnLevel _playerInit;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerInitializationOnLevel playerInit)
+    {
+        _playerInit = playerInit;
+        _playerInit.OnPlayerUpdate += Init;
+    }
+
+    private void Init(Player player)
     {
         _playerHealth = player.GetComponent<Health>();
+
+        _playerHealth.OnDie += OnPlayerDie;
+    }
+
+    private void OnDestroy()
+    {
+        _playerInit.OnPlayerUpdate -= Init;
     }
 
     private void Start()
     {
         _panel.SetActive(false);
-    }
-
-    private void OnEnable()
-    {
-        _playerHealth.OnDie += OnPlayerDie;
     }
 
     private void OnDisable()

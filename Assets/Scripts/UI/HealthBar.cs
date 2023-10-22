@@ -10,22 +10,30 @@ public class HealthBar : MonoBehaviour
     //private Text _text;
 
     private Health _playerHealth;
+    private PlayerInitializationOnLevel _playerInit;
 
     private float maxHealth;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerInitializationOnLevel playerInit)
     {
-        _playerHealth = player.GetComponent<Health>();
+        _playerInit = playerInit;
+        playerInit.OnPlayerUpdate += Init;
     }
 
-    void OnEnable()
+    private void OnDestroy()
     {
+        _playerInit.OnPlayerUpdate -= Init;
+    }
+
+    private void Init(Player player)
+    {
+        _playerHealth = player.GetComponent<Health>();
+
         _playerHealth.OnUpdateHealth += UpdateBar;
         maxHealth = _playerHealth.GetMaxHealth();
         UpdateBar(maxHealth);
     }
-
     void OnDisable()
     {
         _playerHealth.OnUpdateHealth -= UpdateBar;

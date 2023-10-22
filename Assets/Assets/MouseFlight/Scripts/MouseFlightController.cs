@@ -45,11 +45,27 @@ namespace MFlight
         private bool isMouseAimFrozen = false;
         private Transform aircraft = null;
 
+        private PlayerInitializationOnLevel _playerInit;
+
         [Inject]
-        private void Construct(Player player)
+        private void Construct(PlayerInitializationOnLevel playerInit)
+        {
+            _playerInit = playerInit;
+            _playerInit.OnPlayerUpdate += Init;
+        }
+
+        public void Init(Player player)
         {
             plane = player.GetComponent<MFlight.Demo.Plane>();
             aircraft = plane.transform;
+
+            if (aircraft == null)
+                Debug.LogError(name + "MouseFlightController - No aircraft transform assigned!");
+        }
+
+        private void OnDestroy()
+        {
+            _playerInit.OnPlayerUpdate -= Init;
         }
 
         /// <summary>
@@ -90,8 +106,6 @@ namespace MFlight
 
         private void Awake()
         {
-            if (aircraft == null)
-                Debug.LogError(name + "MouseFlightController - No aircraft transform assigned!");
             if (mouseAim == null)
                 Debug.LogError(name + "MouseFlightController - No mouse aim transform assigned!");
             if (cameraRig == null)

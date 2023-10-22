@@ -9,23 +9,30 @@ public class SunBehaviour : MonoBehaviour
     private Transform _light;
 
     private Transform _player;
+    private PlayerInitializationOnLevel _playerInit;
 
     [Inject]
-    private void Construct(Player player)
+    private void Construct(PlayerInitializationOnLevel playerInit)
     {
-        _player = player.transform;
+        _playerInit = playerInit;
+        _playerInit.OnPlayerUpdate += Init;
     }
 
-    private void Start()
+    private void OnDestroy()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _playerInit.OnPlayerUpdate -= Init;
     }
+
+    private void Init(Player player)
+    {
+        _player = player.transform;
+    }   
 
     private void Update()
     {
         if (_player != null && _light != null)
         {
-            _light.LookAt(_player.transform.position);
+            _light.LookAt(_player.position);
         }
     }
 

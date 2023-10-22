@@ -8,21 +8,26 @@ public class LocationInstaller : MonoInstaller
     //private SunSystemGeneration _sunGenerator;
     [SerializeField]
     private EnemyGeneration _enemyGenerator;
+    [SerializeField]
+    private PlayerInitializationOnLevel _playerInit;
+    [SerializeField]
+    private MouseFlightController flightController;
 
-    public Transform StartPoint;
-    public MouseFlightController flightController;
-    public Player playerPlane;
+    //public Transform StartPoint;
+
+    //public Player playerPlane;
 
     public override void InstallBindings()
     {
-        CreatePlane();
-        CreateControls();
-
+        //CreatePlane();
         //BindSunSystemGenerator();
+        
+        BindPlayerInitializer();
         BindEnemyGeneration();
+        BindFlightController();
     }
 
-    private void CreateControls()
+    private void BindFlightController()
     {
         Container.
             Bind<MouseFlightController>().
@@ -30,15 +35,15 @@ public class LocationInstaller : MonoInstaller
             AsSingle();
     }
 
-    private void CreatePlane()
-    {
-        Player plane =
-                    Container.InstantiatePrefabForComponent<Player>(playerPlane, StartPoint.position, Quaternion.identity, null);
-        Container.
-            Bind<Player>().
-            FromInstance(plane).
-            AsSingle();
-    }
+    //private void CreatePlane()
+    //{
+    //    Player plane =
+    //                Container.InstantiatePrefabForComponent<Player>(playerPlane, StartPoint.position, Quaternion.identity, null);
+    //    Container.
+    //        Bind<Player>().
+    //        FromInstance(plane).
+    //        AsSingle();
+    //}
 
     //private void BindSunSystemGenerator()
     //{
@@ -47,6 +52,14 @@ public class LocationInstaller : MonoInstaller
     //        .FromInstance(_sunGenerator)
     //        .AsSingle();
     //}
+
+    private void BindPlayerInitializer()
+    {
+        Container
+            .Bind<PlayerInitializationOnLevel>()
+            .FromInstance(_playerInit)
+            .AsSingle();
+    }
 
     private void BindEnemyGeneration()
     {

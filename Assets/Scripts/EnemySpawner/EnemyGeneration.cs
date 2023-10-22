@@ -10,28 +10,36 @@ public class EnemyGeneration : MonoBehaviour
     [SerializeField]
     private EnemyLevelList _levelList;
     [SerializeField]
-    private GameObject _starPort;
-    [SerializeField]
-    private Transform _spawnTransformPoint;
+    private Transform _port;
 
     private List<EnemyController> _enemies = new();
+    private Player _player;
+    PlayerInitializationOnLevel _playerInit;
 
     [Inject]
-    private void Construct()
+    private void Construct(PlayerInitializationOnLevel playerInit)
     {
-        
+        _playerInit = playerInit;
+        _playerInit.OnPlayerUpdate += Init;
+    }
+
+    private void Init(Player player)
+    {
+        _player = player;
+    }
+
+    private void OnDestroy()
+    {
+        _playerInit.OnPlayerUpdate -= Init;
     }
 
     private void Start()
     {
-        GenerateStarBase(_spawnTransformPoint.position);
+        GenerateStarterEnemies();
     }
 
-    private void GenerateStarBase(Vector3 position)
+    private void GenerateStarterEnemies()
     {
-        var port = Instantiate(_starPort, 
-            _spawnTransformPoint.position, Random.rotation);
-
         var list = _levelList.GetInfoByLevel(currentLevel);
 
         foreach (var obj in list)
@@ -44,7 +52,9 @@ public class EnemyGeneration : MonoBehaviour
                 float z = Random.Range(-250, 750);
 
                 var enemyShip = Instantiate(obj.Enemy, new Vector3(
-                    port.transform.position.x + x, port.transform.position.y + y, port.transform.position.z + z), Quaternion.identity);
+                    _port.position.x + x, _port.position.y + y, _port.position.z + z), Quaternion.identity);
+                enemyShip.Init(_player);
+                
                 _enemies.Add(enemyShip);
                 enemyShip.OnKilled += RemoveDestroyedShip;
             }

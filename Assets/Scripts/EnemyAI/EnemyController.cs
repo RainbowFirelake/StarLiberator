@@ -34,20 +34,20 @@ namespace StarLiberator.Enemies
         private bool _isRotatingToPlayer = false;
         private bool _isMovingToPlayer = false;
 
-        [Inject]
-        private void Construct(Player player)
+        private PlayerInitializationOnLevel _playerInit;
+
+        public void Init(Player player)
         {
             _currentTarget = player.transform;
+            _targetingHelper.Initialize(_transform);
+            _targetingHelper.SetTarget(_currentTarget);
+            _targetRb = _currentTarget.GetComponent<Rigidbody>();
         }
 
         private void Start()
         {
             _transform = GetComponent<Transform>();
-            _currentTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            _targetRb = _currentTarget.GetComponent<Rigidbody>();
             _rb = GetComponent<Rigidbody>();
-            _targetingHelper.Initialize(_transform);
-            _targetingHelper.SetTarget(_currentTarget);
         }
 
         private void Update()
