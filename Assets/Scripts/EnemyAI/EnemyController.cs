@@ -34,8 +34,6 @@ namespace StarLiberator.Enemies
         private bool _isRotatingToPlayer = false;
         private bool _isMovingToPlayer = false;
 
-        private PlayerInitializationOnLevel _playerInit;
-
         public void Init(Player player)
         {
             _currentTarget = player.transform;

@@ -26,16 +26,12 @@ public class EnemyGeneration : MonoBehaviour
     private void Init(Player player)
     {
         _player = player;
+        GenerateStarterEnemies();
     }
 
     private void OnDestroy()
     {
         _playerInit.OnPlayerUpdate -= Init;
-    }
-
-    private void Start()
-    {
-        GenerateStarterEnemies();
     }
 
     private void GenerateStarterEnemies()
