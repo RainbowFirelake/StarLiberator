@@ -300,6 +300,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 1986941181}
+--- !u!20 &252994309 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5923606009754768820, guid: f4a05a043275a2043b75f4c820c51469,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850597367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &253496143
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +705,7 @@ MonoBehaviour:
   _enemyGenerator: {fileID: 522590961}
   _playerInit: {fileID: 2119673763}
   flightController: {fileID: 484134766}
+  _unitTracker: {fileID: 595286233}
 --- !u!114 &484134766 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5633917588462531960, guid: f4a05a043275a2043b75f4c820c51469,
@@ -732,6 +739,123 @@ MonoBehaviour:
   currentLevel: 1
   _levelList: {fileID: 11400000, guid: 3beaff1b9a9340040910395a134e9c43, type: 2}
   _port: {fileID: 1713434264}
+--- !u!1 &595286228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595286232}
+  - component: {fileID: 595286231}
+  - component: {fileID: 595286230}
+  - component: {fileID: 595286229}
+  - component: {fileID: 595286233}
+  m_Layer: 5
+  m_Name: UnitTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &595286229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595286228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 127
+--- !u!114 &595286230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595286228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &595286231
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595286228}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 252994309}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &595286232
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595286228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &595286233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595286228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c717224c06d924faf18403288014df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectPrefab: {fileID: 7999585346217528755, guid: cac76015f18ae554292af224ae180dda,
+    type: 3}
+  _trackableUnits: []
 --- !u!1001 &811747552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2437,6 +2561,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 419243459}
   - {fileID: 811747552}
+  - {fileID: 595286232}
   - {fileID: 634247604596537493}
   - {fileID: 253496146}
   - {fileID: 6086551603827024329}

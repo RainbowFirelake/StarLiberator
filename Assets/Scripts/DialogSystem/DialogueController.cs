@@ -27,7 +27,6 @@ public class DialogueController : MonoBehaviour
     private int _currentDialogueLineIndex = -1;
     private  int _numberOfFinishedDialogues = 1;
     private bool isDialogueActive = false;
-    private bool isPanelInitialized = false;
     private AudioSource audioSource = null;
     private bool _showLineEnded = false;
 

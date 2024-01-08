@@ -30,8 +30,8 @@ namespace StarLiberator.Enemies
         private Transform _transform;
         private Rigidbody _rb;
         private Rigidbody _targetRb;
+        private RectangleOnUnits _unitTracker;
 
-        private bool _isRotatingToPlayer = false;
         private bool _isMovingToPlayer = false;
 
         public void Init(Player player)
@@ -60,14 +60,10 @@ namespace StarLiberator.Enemies
                 _isMovingToPlayer = true;
                 if (distance > _rotationDistance)
                 {
-                    _isRotatingToPlayer = true;
                     var rotate = Quaternion.LookRotation(_currentTarget.position - _transform.position);
                     _transform.rotation = Quaternion.Slerp(_transform.rotation, rotate, Time.deltaTime * _rotationSpeed);
                 }
-                else
-                {
-                    _isRotatingToPlayer = false;
-                }
+
                 if (distance < _shootDistance)
                 {
                     _shooter.SetAimDirection(GetPredictedTargetPosition(distance));

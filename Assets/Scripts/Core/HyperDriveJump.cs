@@ -15,8 +15,6 @@ public class HyperDriveJump : MonoBehaviour
     [SerializeField]
     private float _time;
 
-    private bool _active = false;
-
     private bool _jumpAvailable = false;
 
     private void OnEnable()
@@ -41,7 +39,6 @@ public class HyperDriveJump : MonoBehaviour
     public void StartHyperJump()
     {
         _go.SetActive(true);
-        _active = true;
         if (_audioSource != null)
         {
             _audioSource.Play();

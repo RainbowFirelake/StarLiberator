@@ -4,27 +4,22 @@ using Zenject;
 
 public class LocationInstaller : MonoInstaller
 {
-    //[SerializeField]
-    //private SunSystemGeneration _sunGenerator;
     [SerializeField]
     private EnemyGeneration _enemyGenerator;
     [SerializeField]
     private PlayerInitializationOnLevel _playerInit;
     [SerializeField]
     private MouseFlightController flightController;
-
-    //public Transform StartPoint;
-
-    //public Player playerPlane;
+    [SerializeField]
+    private RectangleOnUnits _unitTracker;
 
     public override void InstallBindings()
-    {
-        //CreatePlane();
-        //BindSunSystemGenerator();
-        
+    {        
         BindPlayerInitializer();
+        BindEnemyFactory();
         BindEnemyGeneration();
         BindFlightController();
+        BindUnitTracker();
     }
 
     private void BindFlightController()
@@ -35,23 +30,13 @@ public class LocationInstaller : MonoInstaller
             AsSingle();
     }
 
-    //private void CreatePlane()
-    //{
-    //    Player plane =
-    //                Container.InstantiatePrefabForComponent<Player>(playerPlane, StartPoint.position, Quaternion.identity, null);
-    //    Container.
-    //        Bind<Player>().
-    //        FromInstance(plane).
-    //        AsSingle();
-    //}
-
-    //private void BindSunSystemGenerator()
-    //{
-    //    Container
-    //        .Bind<SunSystemGeneration>()
-    //        .FromInstance(_sunGenerator)
-    //        .AsSingle();
-    //}
+    private void BindEnemyFactory()
+    {
+        Container
+            .Bind<EnemyFactory>()
+            .FromNew()
+            .AsSingle();
+    }
 
     private void BindPlayerInitializer()
     {
@@ -66,6 +51,14 @@ public class LocationInstaller : MonoInstaller
         Container
             .Bind<EnemyGeneration>()
             .FromInstance(_enemyGenerator)
+            .AsSingle();
+    }
+
+    private void BindUnitTracker()
+    {
+        Container
+            .Bind<RectangleOnUnits>()
+            .FromInstance(_unitTracker)
             .AsSingle();
     }
 }

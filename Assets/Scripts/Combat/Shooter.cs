@@ -10,8 +10,6 @@ public class Shooter : MonoBehaviour
     [SerializeField] private Transform gun;
     [SerializeField] private Weapons currentWeapon = null;
     [SerializeField] private Weapons defaultWeapon = null;
-    [SerializeField] Transform rightHandTransform = null;
-    [SerializeField] Transform leftHandTransform = null;
     [SerializeField] private AudioSource _source;
     [SerializeField] private SideManager _sideManager;
     [SerializeField]

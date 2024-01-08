@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public static event Action OnChangeMan;
     public static event Action<Side> OnEnemyDie;
     public event Action OnDie;
 

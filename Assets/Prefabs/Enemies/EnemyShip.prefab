@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8838723014483497049}
   - component: {fileID: 6656898734294991670}
   - component: {fileID: 8400606431215671312}
+  - component: {fileID: -6388175076216209595}
   m_Layer: 0
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -272,6 +273,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6388175076216209595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387373095768197418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaccc3ed2fa3da498dd216dd1b6f49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406516478667810075
 GameObject:
   m_ObjectHideFlags: 0

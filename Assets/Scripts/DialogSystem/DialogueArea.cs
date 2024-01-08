@@ -11,8 +11,6 @@ public class DialogueArea : MonoBehaviour
     [SerializeField]
     private bool isActivateOnStart;
 
-    private bool _isActivatedBefore = false;
-
     private void Start()
     {
         if (isActivateOnStart)
@@ -23,7 +21,6 @@ public class DialogueArea : MonoBehaviour
 
     public void ActivateDialogue()
     {
-        _isActivatedBefore = true;
         OnEnteringDialogue?.Invoke(dialogue);
     }
 }

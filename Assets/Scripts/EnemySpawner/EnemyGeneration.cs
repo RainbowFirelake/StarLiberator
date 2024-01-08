@@ -14,13 +14,17 @@ public class EnemyGeneration : MonoBehaviour
 
     private List<EnemyController> _enemies = new();
     private Player _player;
-    PlayerInitializationOnLevel _playerInit;
+    
+    private PlayerInitializationOnLevel _playerInit;
+    private RectangleOnUnits _unitTracker;
+    private EnemyFactory _enemyFactory;
 
     [Inject]
-    private void Construct(PlayerInitializationOnLevel playerInit)
+    private void Construct(PlayerInitializationOnLevel playerInit, EnemyFactory enemyFactory)
     {
         _playerInit = playerInit;
         _playerInit.OnPlayerUpdate += Init;
+        _enemyFactory = enemyFactory;
     }
 
     private void Init(Player player)
@@ -47,12 +51,12 @@ public class EnemyGeneration : MonoBehaviour
                 float y = Random.Range(-500, 500);
                 float z = Random.Range(-250, 750);
 
-                var enemyShip = Instantiate(obj.Enemy, new Vector3(
+                var enemyShip = _enemyFactory.Create(obj.Enemy, new Vector3(
                     _port.position.x + x, _port.position.y + y, _port.position.z + z), Quaternion.identity);
-                enemyShip.Init(_player);
+                enemyShip.GetComponent<EnemyController>().Init(_player);
                 
-                _enemies.Add(enemyShip);
-                enemyShip.OnKilled += RemoveDestroyedShip;
+                _enemies.Add(enemyShip.GetComponent<EnemyController>());
+                enemyShip.GetComponent<EnemyController>().OnKilled += RemoveDestroyedShip;
             }
         }
     }

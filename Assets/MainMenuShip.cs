@@ -11,12 +11,9 @@ public class MainMenuShip : MonoBehaviour
     private float _forceMultiplier = 100f;
     [SerializeField]
     private float _flightDelay = 2f;
-    [SerializeField]
-    private float _timeOfReturningToStart = 15f;
 
     private Rigidbody _rb;
     private bool _isFlying = false;
-    private float _timeOfFlying = 0;
 
     void Start()
     {
