@@ -7,7 +7,7 @@ public class RectangleOnUnits : MonoBehaviour
     [SerializeField]
     private Tracker _trackerPrefab;
 
-    private List<Tracker> _trackers = new();
+    private readonly List<Tracker> _trackers = new();
 
     public void RegisterNewTrackable(TrackableUnit trackable)
     {
@@ -22,11 +22,12 @@ public class RectangleOnUnits : MonoBehaviour
 
     private void SetOrCreateTrackerIfNeed(TrackableUnit trackable)
     {
-        var idleTracker = _trackers.FirstOrDefault(tracker => !tracker.IsBusy);
+        var idleTracker = _trackers.FirstOrDefault(tracker => tracker.IsFree);
 
         if (idleTracker == null)
         {
             idleTracker = Instantiate(_trackerPrefab, this.transform);
+            _trackers.Add(idleTracker);
         }
 
         idleTracker.InitTrackable(trackable);

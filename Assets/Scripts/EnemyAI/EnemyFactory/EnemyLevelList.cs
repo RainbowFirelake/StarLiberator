@@ -22,6 +22,17 @@ namespace StarLiberator.Enemies
             _maxLevel = LevelLists.Count;
         }
 
+        public EnemyController GetRandomEnemyAtLevel(int level)
+        {
+            if (level > _maxLevel)
+            {
+                level = _maxLevel - 1;
+            }
+
+            var levelList = LevelLists[level];
+            return levelList[Random.Range(0, levelList.Count)].Enemy;
+        }
+
         public List<EnemyLevelInfo> GetInfoByLevel(int level)
         {
             if (level > _maxLevel) return LevelLists[_maxLevel - 1];

@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class Tracker : MonoBehaviour
 {
-    public bool IsBusy
+    public bool IsFree
     {
-        get => _currentTrackable != null;
+        get => _currentTrackable == null;
     }
 
     [SerializeField]
@@ -32,13 +32,7 @@ public class Tracker : MonoBehaviour
 
     private void Update()
     {
-        if (!IsBusy)
-        {
-            DisableTrackerImage();
-            return;
-        }
-
-        if (!IsTrackableVisible())
+        if (IsFree || !IsTrackableVisible())
         {
             DisableTrackerImage();
             return;
